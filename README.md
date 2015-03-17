@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/Compass/compass-rails.png?branch=master)](https://travis-ci.org/Compass/compass-rails)
 [![Code Climate](https://codeclimate.com/github/Compass/compass-rails.png)](https://codeclimate.com/github/Compass/compass-rails)
 [![Gem Version](https://badge.fury.io/rb/compass-rails.svg)](http://badge.fury.io/rb/compass-rails)
+[![Coverage Status](https://coveralls.io/repos/Compass/compass-rails/badge.png)](https://coveralls.io/r/Compass/compass-rails)
 
 Compass rails is an adapter for the [Compass Stylesheet Authoring
 Framework](http://compass-style.org) for [Ruby on Rails](http://rubyonrails.org/).
@@ -53,13 +54,11 @@ Use `application.css` to require files that use compass features. Ex:
 
 ### Configuration
 
-If you have a compass configuration file (recommended) then you can
-use the [Compass configuration 
+Compass-rails is configured out of the box to work with Rails. 
+
+Advanced users can choose to add a `config/compass.rb` and take advantage of the [Compass configuration 
 reference](http://compass-style.org/help/documentation/configuration-reference/)
-as is. If you choose to configure compass from your rails configuration
-files, then you should understand that the compass configuration
-options explained there will be methods and properties on the `config.compass`
-configuration object exposed to rails within any configuration block.
+as is.
 
 ### Installing Compass extensions
 

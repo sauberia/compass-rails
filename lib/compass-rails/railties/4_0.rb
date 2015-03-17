@@ -4,9 +4,6 @@ module CompassRails
     initializer "compass.initialize_rails", :group => :all do |app|
       require 'compass'
       require 'compass-rails/patches/4_0'
-      # Configure compass for use within rails, and provide the project configuration
-      # that came via the rails boot process.
-      CompassRails.check_for_double_boot!
       Compass.discover_extensions!
       CompassRails.configure_rails!(app)
     end
@@ -28,9 +25,9 @@ module CompassRails
 
             # Clear entries in Hike::Index for this sprite's directory.
             # This makes sure the asset can be found by find_assets
-            trail = Rails.application.assets.send(:trail)
-            trail.instance_variable_get(:@entries).delete(File.dirname(filename))
-            trail.instance_variable_get(:@stats).delete(filename)
+            index = Rails.application.assets.send(:trail).index
+            index.instance_variable_get(:@entries).delete(File.dirname(filename))
+            index.instance_variable_get(:@stats).delete(filename)
 
             pathname      = Pathname.new(filename)
             logical_path  = pathname.relative_path_from(Pathname.new(Compass.configuration.images_path))

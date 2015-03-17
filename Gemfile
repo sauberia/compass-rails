@@ -3,15 +3,10 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in compass-rails.gemspec
 gemspec
 
-group :assets do
-  gem "compass-rails", :path=>"."
-  gem 'compass-blueprint'
-end
-
 group :test do
   gem 'mocha'
-  gem "appraisal"
-  gem 'rainbow'
+  gem 'appraisal'
+  gem 'minitest'
 end
 
 unless ENV["CI"]
